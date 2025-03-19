@@ -66,9 +66,42 @@ interface Book {
 }
 let book: Book = {
   name: "Atomic Habbit",
-  publishDate: Date.now.toString(),
+  publishDate: Date().toString(),
   price: 3000,
 };
 // console.log(`Book: ${book.name}`);
 
-interface Ebook {}
+// let printBooks = (books: Book[]) => {
+//   books.map((e) => {
+//     console.log("name: ", e.name);
+//     console.log("Date: ", e.publishDate);
+//     console.log("Price: ", e.price);
+//   });
+// };
+
+// printBooks([book]);
+
+interface Ebook extends Book {
+  type?: string;
+  link?: string;
+}
+
+let eBook: Ebook = {
+  name: "Atomic Habbit",
+  publishDate: Date().toString(),
+  price: 3000,
+  type: "pdf",
+  link: "http/google.com",
+};
+
+let printBooks = (books: Ebook[]) => {
+  books.map((e) => {
+    console.log("name: ", e.name);
+    console.log("Date: ", e.publishDate);
+    console.log("Price: ", e.price);
+    console.log("Type: ", e.type);
+    console.log("link: ", e.link);
+  });
+};
+
+printBooks([eBook]);
