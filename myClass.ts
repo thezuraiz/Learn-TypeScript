@@ -12,3 +12,6 @@ class UserClass {
 }
 
 let zuraizC = new UserClass("1@gmail.com", "");
+
+zuraizC.email = "zoraizaamir2002@gmail.com";
+// zuraizC.password = '' // Not Allowed
