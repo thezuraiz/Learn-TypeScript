@@ -9,6 +9,19 @@ class UserClass {
     this.username = email.split("@").toString();
     this.password = `changeMyPassword${this.email}`;
   }
+
+  // Getters
+  get appleEmail(): string {
+    // Don't be void
+    // Your Logic
+    return this.email;
+  }
+
+  set userName(username) {
+    // It always accept atleast one params and doesnt return anything
+    this.userName = username;
+    // return ""; // This shows error
+  }
 }
 
 let zuraizC = new UserClass("1@gmail.com", "");
