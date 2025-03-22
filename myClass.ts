@@ -1,7 +1,7 @@
 class UserClass {
   email: string; // Always mention attributes in TS
   username: string;
-  private password: string; // For make attributes private
+  protected password: string; // For make attributes protected
 
   constructor(email: string, passwords: string) {
     // Always mention parameter types
@@ -23,6 +23,13 @@ class UserClass {
     // return ""; // This shows error
   }
 }
+
+// class Admin extends UserClass {
+//   changeUserClass = () => {
+//     this.passwords =
+//       "You cant change it untill you change access specifier to protected in super class or parent class";
+//   };
+// }
 
 let zuraizC = new UserClass("1@gmail.com", "");
 
