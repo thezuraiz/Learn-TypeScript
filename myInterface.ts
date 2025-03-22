@@ -26,3 +26,33 @@ let mostNewUser: Admin = {
     return "";
   },
 };
+
+interface TakePhoto {
+  cameraMode: string;
+  filter: string;
+  burst: number;
+}
+
+interface Shorts {
+  duration: number;
+}
+
+class Instagram implements TakePhoto {
+  /// In Interface you must have to define all the mehtods and attributes
+  constructor(
+    public cameraMode: string,
+    public filter: string,
+    // burst: string Even You have to make it same data type
+    public burst: number
+  ) {}
+}
+
+class Youtube implements TakePhoto, Shorts {
+  constructor(
+    public cameraMode: string,
+    public filter: string,
+    // burst: string Even You have to make it same data type
+    public burst: number,
+    public duration: number
+  ) {}
+}
