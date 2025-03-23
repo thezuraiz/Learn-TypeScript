@@ -37,6 +37,8 @@ interface Shorts {
   duration: number;
 }
 
+// let xk = new Shorts() /// Object restricted
+
 class Instagram implements TakePhoto {
   /// In Interface you must have to define all the mehtods and attributes
   constructor(
