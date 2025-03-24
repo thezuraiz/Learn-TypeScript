@@ -25,6 +25,8 @@ let mostNewUser: Admin = {
     // You can use different paramenter name but type is strict
     return "";
   },
+  isAdmin: false,
+  passwords: "",
 };
 
 interface TakePhoto {
