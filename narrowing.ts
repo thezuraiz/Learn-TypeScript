@@ -30,3 +30,22 @@ function printAll(strs: string | string[] | null) {
     }
   }
 }
+
+interface User {
+  email: string;
+  passwords: string;
+}
+
+interface Admin extends User {
+  isAdmin: boolean;
+}
+
+function isAdminAccount(account: User | Admin) {
+  if ("isAdmin" in account) {
+    // Now you got Admin Object
+    return account.isAdmin;
+  }
+  // Lets try to return Admin here
+  //   return account.isAdmin; // Error
+  return false;
+}
