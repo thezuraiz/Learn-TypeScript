@@ -80,3 +80,49 @@ function getFood(pet: Fish | Bird) {
   // To overcome this you need to put isFish return type as PET IS FISH
   return "Bird Food";
 }
+
+interface Circle {
+  kind: "circle";
+  radius: number;
+}
+
+interface Sqaure {
+  kind: "square";
+  side: number;
+}
+
+interface Rectangle {
+  kind: "rectangle";
+  length: number;
+  width: number;
+}
+
+type Shape = Circle | Sqaure | Rectangle;
+
+/// Not recommended because if you add Shape as Rectagle its shows error
+function getShape(shape: Shape) {
+  if (shape.kind == "circle") {
+    return Math.PI * shape.radius * 2;
+  }
+  // return shape.side * shape.side; // Uncomment to check its error
+}
+
+/// Recommended Way
+function getArea(shape: Shape) {
+  switch (shape.kind) {
+    case "circle":
+      return shape.radius * shape.radius;
+
+    case "square":
+      return Math.PI * (shape.side * shape.side);
+
+    case "rectangle":
+      return shape.width * shape.length;
+
+    default:
+      // Now you can write future code as well
+      let _defaultShape: never = shape;
+      // never means you are going to use it never but if you are not using all cases of Shape it shows error
+      return _defaultShape;
+  }
+}
